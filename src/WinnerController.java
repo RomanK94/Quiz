@@ -5,7 +5,7 @@ public class WinnerController {
     Board board = Board.getBoard();
     Word word = Word.getWord();
     private int lengthAnswer = word.getAnswer().length();
-    private String answer = word.getAnswer();
+    private String answer = word.getAnswer().toLowerCase();
     private boolean flagWinner = false;
 
     ArrayList<Character> letters = new ArrayList<Character>();
@@ -29,6 +29,7 @@ public class WinnerController {
 
     public void win() {
         System.out.println("Congratulations!");
+        System.out.println("The answer is " + word.getAnswer());
         System.out.println("You win!");
         flagWinner = true;
     }
@@ -52,7 +53,7 @@ public class WinnerController {
     }
 
     public void checkLetter(char letter) {
-        if (board.lettersOnBoard.contains(letter)) {
+        if (letters.contains(letter)) {
             this.fillWord(letter);
         } else {
             System.out.println("Your letter is not found, try again");

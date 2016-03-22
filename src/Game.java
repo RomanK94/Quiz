@@ -19,6 +19,7 @@ public class Game {
             } catch (QuizInputException e) {
                 System.out.println("The number of entered characters is incorrect");
             }
+            System.out.println();
         }
     }
 }
